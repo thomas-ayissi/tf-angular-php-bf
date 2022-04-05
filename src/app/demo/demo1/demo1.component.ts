@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class Demo1Component implements OnInit {
 
   monPrenom : string = "Aude";
-  monMessage : string = "";
+  monMessage : string = "Un texte va s'afficher ici";
   monPlaceholder : string = "Entrez un truc";
   isClickable : boolean = true;
 

@@ -1,25 +1,26 @@
-<h1>Demo1 : Les bindings</h1>
-<div>
-    <h2>Property Binding</h2>
-    <h3>One-Way Binding</h3>
+<h2>Demo1 : Les bindings</h2>
+<div class="chapter">
+    <h3 class="text-primary">Property Binding</h3>
+    <h4>One-Way Binding</h4>
     <div>Bonjour {{monPrenom}}, comment vas-tu ?</div>
-    <h3>Two-Way Binding</h3>
+    <h4>Two-Way Binding</h4>
     <div>
         <p>Mince, tu ne t'appelles pas {{monPrenom}} ?! Change juste en dessous :</p>
-        <input type="text" [(ngModel)]="monPrenom">
+        <input class="form-control" type="text" [(ngModel)]="monPrenom">
     </div>
 </div>
 
-<div>
-    <h2>Event Binding</h2>
+<div class="chapter">
+    <h3 class="text-primary">Event Binding</h3>
     <p>{{monMessage}}</p>
-    <button (click)="direBonjour('fr')">Dis bonjour en français</button>
-    <button (click)="direBonjour('en')">Dis bonjour en anglais</button>
-    <button (click)="direBonjour('es')">Dis bonjour en espagnol</button>
+   
+    <button class="btn btn-primary" (click)="direBonjour('fr')">Dis bonjour en français</button>
+    <button class="btn btn-primary" (click)="direBonjour('en')">Dis bonjour en anglais</button>
+    <button class="btn btn-primary" (click)="direBonjour('es')">Dis bonjour en espagnol</button>
 
 </div>
-<div>
-    <h3>Attribute Binding</h3>
-    <input type="text" [placeholder]="monPlaceholder">
-    <input type="button" [disabled]="isClickable" value="Saluer en retour">
+<div class="chapter">
+    <h3 class="text-primary">Attribute Binding</h3>
+    <input class="form-control" type="text" [placeholder]="monPlaceholder">
+    <input class="btn btn-primary" type="button" [disabled]="isClickable" value="Saluer en retour">
 </div>
