@@ -1,0 +1,47 @@
+<div class="chapter">
+    <h2>Les components directives</h2>
+    <h3>Le ngStyle</h3>
+    <div [ngStyle]="style">Mon super texte stylisé</div>
+    <div>
+        <input class="btn btn-primary" type="button" value="Agrandir/Normal" (click)="toggleBig()">
+        <input class="btn btn-primary" type="button" value="Mettre en gras/Normal" (click)="toggleBold()">
+        <input class="btn btn-primary" type="button" value="Mettre en italique/Normal" (click)="toggleItalic()">
+    </div>
+    <h3>Le ngClass</h3>
+    <div [ngClass]="{red: isRed}">Mon texte qui peut devenir rouge</div>
+    <input class="btn btn-primary" type="button" value="Mettre en rouge/Normal" (click)="toggleRed()">
+
+</div>
+
+<div class="chapter">
+    <h2>Les strucutrals directices</h2>
+    <h3>Le ngIf</h3>
+    <div>Coucou <span *ngIf="isCoucoued">Hibou</span></div>
+    <input class="btn btn-primary" type="button" value="Coucou hibou" (click)="toggleCoucou()">
+    <h3>Le ngFor</h3>
+    <div>
+        Ma liste de courses :
+        <!-- <ul>
+            <li *ngFor="let achat of listeCourse; let i = index">{{achat}} - {{i}}</li>
+        </ul> -->
+        <ul>
+            <li *ngFor="let achat of listeCourseObj; let i = index">
+                {{achat.nom}} | {{achat.price}}€ - {{i}}
+            </li>
+        </ul>
+    </div>
+    <h3>Le ngSwitch</h3>
+    <input [(ngModel)]="monChoix" type="text">
+    <!-- <div [ngSwitch]="monChoix">
+        <div *ngSwitchCase="0">Vous avez entré zéro</div>
+        <div *ngSwitchCase="1">Vous avez entré un</div>
+        <div *ngSwitchCase="2">Vous avez entré deux</div>
+        <div *ngSwitchDefault>Vous avez entré une valeur invalide</div>
+    </div> -->
+    <div [ngSwitch]="monChoix">
+        <div *ngSwitchCase="'coca'">Vous avez entré coca</div>
+        <div *ngSwitchCase="'fanta'">Vous avez entré fanta</div>
+        <div *ngSwitchCase="'café'">Vous avez entré café</div>
+        <div *ngSwitchDefault>Vous avez entré une boisson invalide</div>
+    </div>
+</div>
