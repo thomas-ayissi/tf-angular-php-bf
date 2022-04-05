@@ -1,1 +1,25 @@
-<p>demo1 works!</p>
+<h1>Demo1 : Les bindings</h1>
+<div>
+    <h2>Property Binding</h2>
+    <h3>One-Way Binding</h3>
+    <div>Bonjour {{monPrenom}}, comment vas-tu ?</div>
+    <h3>Two-Way Binding</h3>
+    <div>
+        <p>Mince, tu ne t'appelles pas {{monPrenom}} ?! Change juste en dessous :</p>
+        <input type="text" [(ngModel)]="monPrenom">
+    </div>
+</div>
+
+<div>
+    <h2>Event Binding</h2>
+    <p>{{monMessage}}</p>
+    <button (click)="direBonjour('fr')">Dis bonjour en français</button>
+    <button (click)="direBonjour('en')">Dis bonjour en anglais</button>
+    <button (click)="direBonjour('es')">Dis bonjour en espagnol</button>
+
+</div>
+<div>
+    <h3>Attribute Binding</h3>
+    <input type="text" [placeholder]="monPlaceholder">
+    <input type="button" [disabled]="isClickable" value="Saluer en retour">
+</div>

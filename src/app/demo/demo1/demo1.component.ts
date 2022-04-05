@@ -7,9 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Demo1Component implements OnInit {
 
+  monPrenom : string = "Aude";
+  monMessage : string = "";
+  monPlaceholder : string = "Entrez un truc";
+  isClickable : boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  direBonjour(langue : string) : void {
+    switch(langue){
+      case "fr" : 
+        this.monMessage = `Bonjour ${this.monPrenom} !!!!`;
+        break;
+      case "en" :
+        this.monMessage = `Hello ${this.monPrenom} !!!!`;
+        break;
+      case "es" :
+        this.monMessage = `Hola ${this.monPrenom} !!!!`;
+        break;
+      default : 
+        this.monMessage = `fnhesjfns ${this.monPrenom} !!!! (bonjour en klingon)`;
+        break;
+    }
+    this.isClickable = false;
+  }
 }
