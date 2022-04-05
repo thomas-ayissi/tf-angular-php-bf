@@ -8,6 +8,7 @@ import { ExerciceRoutingModule } from './exercice/exercice-routing.module';
 import { NavComponent } from './nav/nav.component';
 import { ToFarhenheitPipe } from './pipes/to-farhenheit.pipe';
 import { ConvertTempPipe } from './pipes/convert-temp.pipe';
+import { ConvertTimePipe } from './pipes/convert-time.pipe';
 
 @NgModule({
   declarations: [

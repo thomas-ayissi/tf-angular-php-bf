@@ -1,1 +1,12 @@
-<p>exo1 works!</p>
+<div class="chapter">
+
+    <h2>Le Timer :</h2>
+    <div>{{secondes | convertTime}}</div>
+    <div>
+        <input (click)="start()" [disabled]="estLance" class="btn btn-primary" type="button" value="Start">
+        <!-- <input (click)="start()" [disabled]="timer" class="btn btn-primary" type="button" value="Start"> -->
+        <input (click)="pause()" [disabled]="!estLance" class="btn btn-primary" type="button" value="Pause">
+        <!-- <input (click)="pause()" [disabled]="!timer" class="btn btn-primary" type="button" value="Pause"> -->
+        <input (click)="reset()" [disabled]="secondes === 0" class="btn btn-primary" type="button" value="Reset">
+    </div>
+</div>
