@@ -1,0 +1,29 @@
+<h1>Demo Pipes</h1>
+<div>
+    <h2>Les pipes de base</h2>
+    <div>
+        <p>Mon nombre, avant le pipe : {{monNumber}}</p>
+        <p>Mon nombre, après le pipe : {{monNumber | number : '1.0-3'}}</p>
+    </div>
+    <div>
+        <p>Ma chaine, avant les pipes : {{maChaine}}</p>
+        <p>Ma chaine, après le pipe uppercase : {{maChaine | uppercase}}</p>
+        <p>Ma chaine, après le pipe lowercase: {{maChaine | lowercase}}</p>
+        <p>Ma chaine, après le pipe titlecase : {{maChaine | titlecase}}</p>
+    </div>
+    <div>
+        <p>Mon anniversaire, avant le pipe : {{monAnniversaire}}</p>
+        <p>Mon anniversaire, après le pipe : {{monAnniversaire | date : "dd/MM/yyyy"}}</p>
+    </div>
+</div>
+
+<div>
+    <h2>Les customs pipes</h2>
+    <div>
+        <p>Ma température : {{maTemperature}}°C</p>
+        <p>Ma température convertie : {{maTemperature | toFarhenheit}}°F</p>
+        <p>Temp C° -> F° {{maTemperature | convertTemp : 'f'}}</p>
+        <p>Temp F° -> C° {{maTemperatureF | convertTemp : 'c'}}</p>
+        <p>Convert C° -> F° -> C° {{maTemperature | convertTemp : 'f' | convertTemp : 'c'}}</p>
+    </div>
+</div>
