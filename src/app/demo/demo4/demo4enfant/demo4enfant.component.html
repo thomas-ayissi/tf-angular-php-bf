@@ -1,0 +1,6 @@
+<div class="child">
+    <h4>Je suis l'enfant <span *ngIf="prenomParent">de {{prenomParent}}</span></h4>
+    <div [ngClass]="{bold: isBold}">J'aime le gras</div>
+    <ng-content></ng-content>
+    <button class="btn btn-primary" (click)="direBonjour()">Dire bonjour à papa</button>
+</div>

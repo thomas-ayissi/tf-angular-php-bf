@@ -1,0 +1,12 @@
+<h2>Demo Input et Output</h2>
+<div class="chapter">
+    <h3>Je suis le parent</h3>
+    <div>{{message}}</div>
+    <input type="text" [(ngModel)]="prenom">
+    <app-demo4enfant [prenomParent]='prenom' [isBold]="true" (saluer)="saluerEnRetour()">
+    <!-- Si on veut emit une valeur de l'enfant vers parent -->
+    <!-- <app-demo4enfant [prenomParent]='prenom' [isBold]="true" (saluer)="saluerEnRetour($event)"> -->
+        <div>J'aime les blagues de papa</div>
+        <div>N'importe quel quantité d'html ici {{prenom}}</div>
+    </app-demo4enfant>
+</div>
