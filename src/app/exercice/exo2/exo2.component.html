@@ -1,0 +1,9 @@
+<div class="chapter">
+    <h3>Ajouter un élément au panier</h3>
+    <div>
+        <input class="form-control" type="text" [(ngModel)]="product" (keydown.enter)="addToCart()">
+        <button (click)="addToCart()" class="btn btn-primary">Ajouter</button>
+    </div>
+
+    <app-show-list [produits]="products" (onDelete)="deleteFromCart($event)" ></app-show-list>
+</div>

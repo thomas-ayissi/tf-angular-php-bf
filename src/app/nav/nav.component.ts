@@ -18,7 +18,8 @@ export class NavComponent implements OnInit {
       { title : "Demo 4 - @Input & @Output", url : "/demo/demo4"}
     ]},
     { title : "Exercices", url : "/exercice", children : [
-      { title : "Exercice 1 - Le Timer", url : "/exercice/exo1"}
+      { title : "Exercice 1 - Le Timer", url : "/exercice/exo1"},
+      { title : "Exercice 2 - Shopping List", url : "/exercice/exo2"}
     ]}
   ];
 
