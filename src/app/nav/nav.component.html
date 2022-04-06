@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
   <ul class="nav flex-column">
     <li class="nav-item">
       <a class="nav-link active" routerLink="/">Accueil</a>
@@ -20,5 +20,18 @@
       <a class="nav-link" routerLink="/exercice/exo1">Exercice 1</a>
     </li>
    
+  </ul>
+</nav> -->
+
+<nav>
+  <ul class="nav flex-column">
+    <li *ngFor="let link of links; let i = index" class="nav-item" (click)="toggleChildren(i)">
+      <a class="nav-link active" routerLink="{{link.url}}">{{link.title}}</a>
+      <ul *ngIf="link.isVisible && link.children" class="nav submenu">
+        <li *ngFor="let child of link.children" class="nav-item">
+          <a class="nav-link active" routerLink="{{child.url}}">{{child.title}}</a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
