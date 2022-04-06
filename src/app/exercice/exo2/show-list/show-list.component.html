@@ -3,7 +3,7 @@
     <ul>
         <li *ngFor="let produit of produits; let i = index" class="flex">
             <div>{{produit}}</div>
-            <button (click)="sendIdToDelete(i)" class="btn btn-outline-danger">🗑</button>
+            <button (click)="sendIdToDelete(i)" class="btn btn-outline-primary">🗑</button>
         </li>
     </ul>
 </div>

@@ -1,8 +1,19 @@
 .flex {
     display: flex;
-    
+    align-items: center;
 }
-
+li{
+    margin: 1%;
+}
 button {
     margin-left: 1%;
+    background-color: white;
+    border: 1px solid darkred;
+    border-radius: 3px;
+    color : darkred;
+}
+
+button:hover {
+    background-color: darkred;
+    color : white;
 }
