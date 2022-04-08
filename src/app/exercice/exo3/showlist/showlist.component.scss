@@ -5,7 +5,9 @@
 li{
     margin: 1%;
 }
-
+li * {
+    margin : 0% 1%;
+}
 button {
     margin-left: 1%;
     // background-color: white;

@@ -8,6 +8,8 @@ import { SharedModule } from '../shared/shared.module';
 import { Exo2Component } from './exo2/exo2.component';
 import { ShowListComponent } from './exo2/show-list/show-list.component';
 import { FormsModule } from '@angular/forms';
+import { Exo3Component } from './exo3/exo3.component';
+import { ShowlistComponent } from './exo3/showlist/showlist.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { FormsModule } from '@angular/forms';
     ExerciceComponent,
     Exo1Component,
     Exo2Component,
-    ShowListComponent
+    ShowListComponent,
+    Exo3Component,
+    ShowlistComponent
   ],
   imports: [
     CommonModule,

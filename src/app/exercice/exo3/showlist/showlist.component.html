@@ -2,7 +2,9 @@
 <div>
     <ul>
         <li *ngFor="let produit of produits; let i = index" class="flex">
-            <div>{{produit}}</div>
+            <div>{{produit.name}}</div>
+            <div>{{produit.quantity}}</div>
+            <button (click)="sendIdToUp(i)" class="btn btn-outline-danger">➕</button>
             <button (click)="sendIdToDelete(i)" class="btn btn-outline-danger">🗑️</button>
         </li>
     </ul>

@@ -1,0 +1,9 @@
+<div class="chapter">
+    <h3>Ajouter un élément au panier</h3>
+    <div class="flex">
+        <input class="form-control" type="text" [(ngModel)]="product" (keydown.enter)="addToCart()">
+        <button (click)="addToCart()" class="btn btn-primary">Ajouter</button>
+    </div>
+
+    <app-showlist [produits]="products" (onUpQtt)="upQuantity($event)" (onDelete)="deleteFromCart($event)" ></app-showlist>
+</div>
