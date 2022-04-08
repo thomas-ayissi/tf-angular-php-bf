@@ -1,9 +1,9 @@
-export class Utilisateur {
-    nom! : string;
-    prenom! : string;
-    dateNaissance! : Date;
-    email! : string;
-    password! : string;
-    tel? : string;
-    nbEnfant! : number;
+export interface IUser {
+    lastname : string;
+    firstname : string;
+    birthdate : Date;
+    email : string;
+    password : string;
+    telephone? : string;
+    nombreEnfants : number;
 }

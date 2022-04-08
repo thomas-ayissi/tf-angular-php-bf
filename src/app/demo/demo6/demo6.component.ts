@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Utilisateur } from 'src/app/models/utilisateur';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { IUser } from 'src/app/models/utilisateur';
 
 @Component({
   selector: 'app-demo6',
@@ -10,7 +10,7 @@ import { Utilisateur } from 'src/app/models/utilisateur';
 export class Demo6Component implements OnInit {
 
   registerForm!: FormGroup;
-  usersList : Utilisateur[] = [];
+  usersList : IUser[] = [];
 
   constructor(private _fb: FormBuilder) { 
   }
@@ -19,7 +19,7 @@ export class Demo6Component implements OnInit {
     this.registerForm = this._fb.group({
       lastname: [null, [Validators.minLength(2), Validators.maxLength(30), Validators.required]],
       firstname: [null, [Validators.required]],
-      birthdate : [null, [Validators.required]],
+      birthdate : [null, [Validators.required, this.valideMajeur()]],
       telephone : [null, [Validators.pattern(/^(((\+|00)32[ ]?(?:\(0\)[ ]?)?)|0){1}(4(60|[789]\d)\/?(\s?\d{2}\.?){2}(\s?\d{2})|(\d\/?\s?\d{3}|\d{2}\/?\s?\d{2})(\.?\s?\d{2}){2})$/)]],
       nombreEnfants : [0, [Validators.required, Validators.min(0), Validators.max(6)]],
       email: [null, [Validators.required, Validators.email]],
@@ -34,17 +34,11 @@ export class Demo6Component implements OnInit {
     if(this.registerForm.valid)
     {
       console.log("C'est valide \\o/");
+      //Pour récupérer juste un control
       console.log(this.registerForm.value.lastname);
-      let utilisateurAAdd : Utilisateur = {
-        nom : this.registerForm.value.lastname,
-        prenom : this.registerForm.value.firstname,
-        dateNaissance : this.registerForm.value.birthdate,
-        email : this.registerForm.value.email,
-        password : this.registerForm.value.password,
-        nbEnfant : this.registerForm.value.nombreEnfants,
-        tel : this.registerForm.value.telephone || null
-      }
-      console.log(utilisateurAAdd);
+      //Récupère tout le formulaire
+      let utilisateurAAdd : IUser = {...this.registerForm.value, birthdate : new Date(this.registerForm.value.birthdate) };
+      
       //Créer un objet grâce aux valeurs du formulaire
       //Utilisation d'un service pour l'envoyer au back-end
       this.usersList.push(utilisateurAAdd);
@@ -58,4 +52,15 @@ export class Demo6Component implements OnInit {
     }
   }
 
+  valideMajeur() : ValidatorFn | null {
+    return (control : AbstractControl) => 
+    {
+      let birthdate = new Date(control.value);
+      if(!(new Date().getFullYear() - birthdate.getFullYear() >= 18))
+       {return { mineur : true}}
+       else {
+         return null;
+       }
+    }
+  }
 }
