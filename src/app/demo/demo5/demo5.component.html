@@ -1,0 +1,17 @@
+<h3>Services et Injection de dépendance</h3>
+
+<div class="chapter">
+    <h4>Exemple avec le boolean</h4>
+    <div *ngIf="isConnected">Vous êtes connecté !</div>
+    <div *ngIf="!isConnected">Vous êtes déconnecté !</div>
+    <button [disabled]="isConnected" class="btn btn-primary" (click)="seConnecter()">Se connecter</button>
+    <button [disabled]="!isConnected" class="btn btn-primary" (click)="seDeconnecter()">Se déconnecter</button>
+</div>
+
+<div class="chapter">
+    <h4>Exemple avec l'utilsateur</h4>
+    <div *ngIf="!connectedUser">Veuillez vous connecter <input type="text" [(ngModel)]="login"></div>
+    <div *ngIf="connectedUser">Bienvenue {{connectedUser.prenom}} !</div>
+    <button [disabled]="connectedUser" class="btn btn-primary" (click)="seConnecterUser()">Se connecter</button>
+    <button [disabled]="!connectedUser" class="btn btn-primary" (click)="seDeconnecterUser()">Se déconnecter</button>
+</div>
