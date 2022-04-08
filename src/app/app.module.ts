@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { ToFarhenheitPipe } from './pipes/to-farhenheit.pipe';
 import { ConvertTempPipe } from './pipes/convert-temp.pipe';
 import { ConvertTimePipe } from './pipes/convert-time.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ConvertTimePipe } from './pipes/convert-time.pipe';
     BrowserModule,
     AppRoutingModule,
     DemoRoutingModule,
-    ExerciceRoutingModule
+    ExerciceRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [],
   providers: [],
