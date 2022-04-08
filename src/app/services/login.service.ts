@@ -19,7 +19,7 @@ export class LoginService {
     this._connected = true;
     return this._connected;
   }
-  
+
   disconnect() : boolean {
     this._connected = false;
     return this._connected;
