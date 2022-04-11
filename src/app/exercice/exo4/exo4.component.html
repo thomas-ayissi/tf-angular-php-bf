@@ -1,0 +1,88 @@
+<h2>Créer un nouveau compte</h2>
+<div class="chapter">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div formGroupName="personalData">
+            <h3>Données personnelles</h3>
+            <div class="form-group">
+                <label for="nis">NIS</label>
+                <input id="nis" class="form-control" type="text" formControlName="nis">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Nom</label>
+                <input id="lastname" class="form-control" type="text" formControlName="lastname">
+            </div>
+            <div class="form-group">
+                <label for="firstname">Prénom</label>
+                <input id="firstname" class="form-control" type="text" formControlName="firstname">
+            </div>
+            <div class="form-group">
+                <label for="birthdate">Date de naissance</label>
+                <input id="birthdate" class="form-control" type="date" formControlName="birthdate">
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" id="gender1" type="radio" formControlName="gender" value="male">
+                <label class="form-check-label" for="gender1">Homme</label>
+                <input class="form-check-input" id="gender2" type="radio" formControlName="gender" value="female">
+                <label class="form-check-label" for="gender2">Femme</label>
+                <input class="form-check-input" id="gender3" type="radio" formControlName="gender" value="other">
+                <label class="form-check-label" for="gender3">Autre</label>
+            </div>
+            <div class="form-group">
+                <label for="accountType">Type de compte</label>
+                <select class="form-control" formControlName="accountType" id="accountType">
+                    <option value="particulier">Particulier</option>
+                    <option value="etudiant">Etudiant</option>
+                    <option value="professionel">Professionel</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone">Numéro de téléphone</label>
+                <input id="phone" class="form-control" type="tel" formControlName="phone">
+            </div>
+            <div class="form-group">
+                <label for="mail">Email</label>
+                <input id="mail" class="form-control" type="email" formControlName="mail">
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input id="password" class="form-control" type="password" formControlName="password">
+            </div>
+            <div class="form-group">
+                <label for="confirmPass">Confirmer le mot de passe</label>
+                <input id="confirmPass" class="form-control" type="password" formControlName="confirmPassword">
+            </div>
+            <div>
+                <label for="hasAddress">Je possède une adresse</label>
+                <input id="hasAddress" type="checkbox" formControlName="hasAddress">
+            </div>
+        </div>
+        <div *ngIf="registerForm.get('personalData.hasAddress')?.value" formGroupName="addressData">
+            <h3>Adresse</h3>
+            <div class="form-group">
+                <label for="street">Rue</label>
+                <input id="rue" class="form-control" type="string" formControlName="street">
+            </div>
+            <div class="form-group">
+                <label for="number">Numéro</label>
+                <input id="number" class="form-control" type="string" formControlName="number">
+            </div>
+            <div class="form-group">
+                <label for="box">Boîte</label>
+                <input id="box" class="form-control" type="string" formControlName="box">
+            </div>
+            <div class="form-group">
+                <label for="zipCode">Code Postal</label>
+                <input id="zipCode" class="form-control" type="string" formControlName="zipCode">
+            </div>
+            <div class="form-group">
+                <label for="city">Ville</label>
+                <input id="city" class="form-control" type="string" formControlName="city">
+            </div>
+            <div class="form-group">
+                <label for="country">Pays</label>
+                <input id="coutry" class="form-control" type="string" formControlName="country">
+            </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Valider mon compte">
+    </form>
+</div>
