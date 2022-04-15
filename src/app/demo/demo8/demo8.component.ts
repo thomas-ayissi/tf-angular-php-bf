@@ -10,12 +10,19 @@ import { ShopService } from 'src/app/services/shop.service';
 export class Demo8Component implements OnInit {
 
   productsList : IProduct[] = [];
-  
+
   constructor(private _shopService : ShopService) { }
 
   ngOnInit(): void {
     this._shopService.getAll().subscribe(
       data => this.productsList = data
+    );
+  }
+
+  deleteProduct(id : number)
+  {
+    this._shopService.deleteProduct(id).subscribe(
+      
     );
   }
 

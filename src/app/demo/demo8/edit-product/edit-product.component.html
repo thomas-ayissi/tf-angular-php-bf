@@ -1,13 +1,13 @@
 <div class="chapter">
-    <h2>Ajouter un produit</h2>
-    <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+    <h2>Modifier un produit</h2>
+    <form [formGroup]="productForm" (ngSubmit)="updateProduct()">
         <div class="form-group">
             <label for="name">Nom du produit</label>
             <input class="form-control" id="name" type="text" formControlName="name">
         </div>
         <div class="form-group">
             <label for="description">Description du produit</label>
-            <input class="form-control" id="description" type="text" formControlName="description">
+            <input [disabled]="disab" class="form-control" id="description" type="text" formControlName="description">
         </div>
         <div class="form-group">
             <label for="category">Catégorie du produit</label>
@@ -19,7 +19,7 @@
             <label for="price">Prix du produit</label>
             <input class="form-control" id="price" type="number" formControlName="price">
         </div>
-        <input class="btn btn-primary" type="submit" value="Ajouter le produit">
+        <input class="btn btn-primary" type="submit" value="Modifier le produit">
     
     </form>
 </div>

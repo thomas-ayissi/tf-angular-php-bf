@@ -12,6 +12,7 @@ import { Demo7addComponent } from './demo7/demo7add/demo7add.component';
 import { Demo7detailsComponent } from './demo7/demo7details/demo7details.component';
 import { AddProductComponent } from './demo8/add-product/add-product.component';
 import { Demo8Component } from './demo8/demo8.component';
+import { EditProductComponent } from './demo8/edit-product/edit-product.component';
 
 const routes: Routes = [
   { path : "", component : DemoComponent, children : [
@@ -25,7 +26,8 @@ const routes: Routes = [
     { path : "demo7add", component : Demo7addComponent},
     { path : "demo7/:id", component : Demo7detailsComponent},
     { path : "demo8", component : Demo8Component},
-    { path : "demo8/add", component : AddProductComponent}
+    { path : "demo8/add", component : AddProductComponent},
+    { path : "demo8/edit/:id", component : EditProductComponent}
 
   ]},
 

@@ -15,7 +15,10 @@
                 <td>{{product.description}}</td>
                 <td>{{product.category}}</td>
                 <td>{{product.price}} €</td>
-                <td><a class="btn btn-primary" routerLink="">Details</a></td>
+                <td>
+                    <a class="btn btn-primary" routerLink="/demo/demo8/edit/{{product.id}}">Edit</a>
+                    <a class="btn btn-primary" (click)="deleteProduct(product.id)" >Delete</a>
+                </td>
             </tr>
         </tbody>
     </table>
