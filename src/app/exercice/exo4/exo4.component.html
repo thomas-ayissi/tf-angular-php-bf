@@ -6,18 +6,22 @@
             <div class="form-group">
                 <label for="nis">NIS</label>
                 <input id="nis" class="form-control" type="text" formControlName="nis">
+                <div class="text-danger" *ngIf="registerForm.get('personalData.nis')?.errors?.['required'] && registerForm.get('personalData.nis')?.touched">Ce champs est requis</div>
             </div>
             <div class="form-group">
                 <label for="lastname">Nom</label>
                 <input id="lastname" class="form-control" type="text" formControlName="lastname">
+                <div class="text-danger" *ngIf="registerForm.get('personalData.lastname')?.errors?.['required'] && registerForm.get('personalData.lastname')?.touched">Ce champs est requis</div>
             </div>
             <div class="form-group">
                 <label for="firstname">Prénom</label>
                 <input id="firstname" class="form-control" type="text" formControlName="firstname">
+                <div class="text-danger" *ngIf="registerForm.get('personalData.firstname')?.errors?.['required'] && registerForm.get('personalData.firstname')?.touched">Ce champs est requis</div>
             </div>
             <div class="form-group">
                 <label for="birthdate">Date de naissance</label>
                 <input id="birthdate" class="form-control" type="date" formControlName="birthdate">
+                <div class="text-danger" *ngIf="registerForm.get('personalData.birthdate')?.errors?.['required'] && registerForm.get('personalData.birthdate')?.touched">Ce champs est requis</div>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" id="gender1" type="radio" formControlName="gender" value="male">
@@ -27,6 +31,7 @@
                 <input class="form-check-input" id="gender3" type="radio" formControlName="gender" value="other">
                 <label class="form-check-label" for="gender3">Autre</label>
             </div>
+            <div class="text-danger" *ngIf="registerForm.get('personalData.gender')?.errors?.['required'] && registerForm.get('personalData.gender')?.touched">Ce champs est requis</div>
             <div class="form-group">
                 <label for="accountType">Type de compte</label>
                 <select class="form-control" formControlName="accountType" id="accountType">
@@ -34,6 +39,8 @@
                     <option value="etudiant">Etudiant</option>
                     <option value="professionel">Professionel</option>
                 </select>
+                <div class="text-danger" *ngIf="registerForm.get('personalData.accountType')?.errors?.['required'] && registerForm.get('personalData.accountType')?.touched">Ce champs est requis</div>
+
             </div>
             <div class="form-group">
                 <label for="phone">Numéro de téléphone</label>
@@ -42,14 +49,18 @@
             <div class="form-group">
                 <label for="mail">Email</label>
                 <input id="mail" class="form-control" type="email" formControlName="mail">
+                <div class="text-danger" *ngIf="registerForm.get('personalData.mail')?.errors?.['required'] && registerForm.get('personalData.mail')?.touched">Ce champs est requis</div>
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe</label>
                 <input id="password" class="form-control" type="password" formControlName="password">
+                <div class="text-danger" *ngIf="registerForm.get('personalData.password')?.errors?.['required'] && registerForm.get('personalData.password')?.touched">Ce champs est requis</div>
             </div>
             <div class="form-group">
                 <label for="confirmPass">Confirmer le mot de passe</label>
                 <input id="confirmPass" class="form-control" type="password" formControlName="confirmPassword">
+                <div class="text-danger" *ngIf="registerForm.get('personalData.confirmPassword')?.errors?.['required'] && registerForm.get('personalData.confirmPassword')?.touched">Ce champs est requis</div>
+                <div class="text-danger" *ngIf="registerForm.get('personalData')?.errors?.['notsamepassword'] && registerForm.get('personalData.confirmPassword')?.touched">Vos mots de passe ne sont pas identiques</div>
             </div>
             <div>
                 <label for="hasAddress">Je possède une adresse</label>
@@ -61,10 +72,12 @@
             <div class="form-group">
                 <label for="street">Rue</label>
                 <input id="rue" class="form-control" type="string" formControlName="street">
+                <div class="text-danger" *ngIf="registerForm.get('addressData.street')?.errors?.['required'] && registerForm.get('addressData.street')?.touched">Ce champs est requis</div>
             </div>
             <div class="form-group">
                 <label for="number">Numéro</label>
                 <input id="number" class="form-control" type="string" formControlName="number">
+                <div class="text-danger" *ngIf="registerForm.get('addressData.number')?.errors?.['required'] && registerForm.get('addressData.number')?.touched">Ce champs est requis</div>
             </div>
             <div class="form-group">
                 <label for="box">Boîte</label>
@@ -72,15 +85,20 @@
             </div>
             <div class="form-group">
                 <label for="zipCode">Code Postal</label>
-                <input id="zipCode" class="form-control" type="string" formControlName="zipCode">
+                <input id="zipCode" class="form-control" type="number" formControlName="zipCode">
+                <div class="text-danger" *ngIf="registerForm.get('addressData.zipCode')?.errors?.['required'] && registerForm.get('addressData.zipCode')?.touched">Ce champs est requis</div>
+                <div class="text-danger" *ngIf="(registerForm.get('addressData.zipCode')?.errors?.['min'] || registerForm.get('addressData.zipCode')?.errors?.['max']) && registerForm.get('addressData.zipCode')?.touched">Le code postal doit être compris entre 1000 et 9999</div>
             </div>
             <div class="form-group">
                 <label for="city">Ville</label>
                 <input id="city" class="form-control" type="string" formControlName="city">
+                <div class="text-danger" *ngIf="registerForm.get('addressData.city')?.errors?.['required'] && registerForm.get('addressData.city')?.touched">Ce champs est requis</div>
             </div>
             <div class="form-group">
                 <label for="country">Pays</label>
                 <input id="coutry" class="form-control" type="string" formControlName="country">
+                <div class="text-danger" *ngIf="registerForm.get('addressData.country')?.errors?.['required'] && registerForm.get('addressData.country')?.touched">Ce champs est requis</div>
+                <div class="text-danger" *ngIf="registerForm.get('addressData.country')?.errors?.['wrongcountry'] && registerForm.get('addressData.country')?.touched">Le pays doit être Belgique, France, Allemagne ou Pays-Bas</div>
             </div>
         </div>
         <input class="btn btn-primary" type="submit" value="Valider mon compte">
