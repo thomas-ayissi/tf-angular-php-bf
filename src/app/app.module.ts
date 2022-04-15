@@ -10,11 +10,13 @@ import { ToFarhenheitPipe } from './pipes/to-farhenheit.pipe';
 import { ConvertTempPipe } from './pipes/convert-temp.pipe';
 import { ConvertTimePipe } from './pipes/convert-time.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,

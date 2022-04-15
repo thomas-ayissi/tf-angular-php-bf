@@ -7,12 +7,13 @@ import { Exo3Component } from './exo3/exo3.component';
 import { Exo4Component } from './exo4/exo4.component';
 
 const routes: Routes = [
-  {path : "exercice", component : ExerciceComponent, children : [
+  {path : "", component : ExerciceComponent, children : [
     { path : "exo1", component : Exo1Component},
     { path : "exo2", component : Exo2Component},
     { path : "exo3", component : Exo3Component},
     { path : "exo4", component : Exo4Component}
-  ]}
+  ]},
+
 ];
 
 @NgModule({

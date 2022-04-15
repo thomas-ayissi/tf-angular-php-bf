@@ -1,0 +1,21 @@
+<div class="chapter">
+    <a class="btn btn-primary" routerLink="/demo/demo7add">Ajouter nouvel utilisateur</a>
+    <table class="table table-hover">
+        <thead>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Date de Naissance</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actions</th>
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let user of userList; let i = index">
+                <td>{{user.lastname}}</td>
+                <td>{{user.firstname}}</td>
+                <td>{{user.birthdate | date : "dd MM yyyy"}}</td>
+                <td>{{user.email}}</td>
+                <td><a class="btn btn-primary" routerLink="/demo/demo7/{{i}}">Details</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
