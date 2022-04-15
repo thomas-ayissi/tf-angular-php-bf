@@ -10,6 +10,7 @@ import { Demo6Component } from './demo6/demo6.component';
 import { Demo7Component } from './demo7/demo7.component';
 import { Demo7addComponent } from './demo7/demo7add/demo7add.component';
 import { Demo7detailsComponent } from './demo7/demo7details/demo7details.component';
+import { Demo8Component } from './demo8/demo8.component';
 
 const routes: Routes = [
   { path : "", component : DemoComponent, children : [
@@ -21,7 +22,8 @@ const routes: Routes = [
     { path : "demo6", component : Demo6Component},
     { path : "demo7", component : Demo7Component},
     { path : "demo7add", component : Demo7addComponent},
-    { path : "demo7/:id", component : Demo7detailsComponent}
+    { path : "demo7/:id", component : Demo7detailsComponent},
+    { path : "demo8", component : Demo8Component}
 
   ]},
 

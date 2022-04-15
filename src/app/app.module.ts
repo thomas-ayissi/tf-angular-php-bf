@@ -11,6 +11,7 @@ import { ConvertTempPipe } from './pipes/convert-temp.pipe';
 import { ConvertTimePipe } from './pipes/convert-time.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NotfoundComponent } from './notfound/notfound.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     AppRoutingModule,
     DemoRoutingModule,
     ExerciceRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [],
   providers: [],
