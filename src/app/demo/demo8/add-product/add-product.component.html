@@ -1,0 +1,26 @@
+<div class="chapter">
+    <h2>Ajouter un produit</h2>
+    <form [formGroup]="productForm">
+        <div class="form-group">
+            <label for="name">Nom du produit</label>
+            <input class="form-control" id="name" type="text" formControlName="name">
+        </div>
+        <div class="form-group">
+            <label for="description">Description du produit</label>
+            <input class="form-control" id="description" type="text" formControlName="description">
+        </div>
+        <div class="form-group">
+            <label for="category">Catégorie du produit</label>
+            <select class="form-control" formControlName="category" id="category">
+                <option value="1">Nourriture</option>
+                <option value="2">Vêtement</option>
+                <option value="3">Entretien</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="price">Prix du produit</label>
+            <input class="form-control" id="price" type="number" formControlName="price">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Ajouter le produit">
+    </form>
+</div>
